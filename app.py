@@ -17,9 +17,9 @@ def load_lottieurl(url):
     return r.json()
 
 inventory_lottie = load_lottieurl("https://assets10.lottiefiles.com/packages/lf20_jcikwtux.json")
-retail_lottie = load_lottieurl("https://assets10.lottiefiles.com/packages/lf20_9cyyl8i4.json")  # Updated visual
+retail_lottie = load_lottieurl("https://assets10.lottiefiles.com/packages/lf20_9cyyl8i4.json")  # Retail management
 
-# --- Custom Background ---
+# --- Custom Background and CSS ---
 st.markdown("""
     <style>
         .stApp {
@@ -47,11 +47,14 @@ st.markdown("""
             background-color: #3b82f6;
             cursor: pointer;
         }
+        img {
+            border-radius: 12px;
+        }
     </style>
 """, unsafe_allow_html=True)
 
 
-# --- Title ---
+# --- Title Section ---
 st.markdown("<h1 style='text-align:center;'>📦 All in One Retail Management</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align:center; font-size:18px;'>Empowering retailers with real-time insights and control.</p>", unsafe_allow_html=True)
 st.markdown("<hr>", unsafe_allow_html=True)
@@ -75,9 +78,8 @@ with left_col:
     """)
 
     st.subheader("⚙️ Built With:")
-    st.markdown("-  Python + Streamlit\n- 🛢️ MySQL\n- 📊 Realtime Dashboards")
+    st.markdown("- 🐍 Python + Streamlit\n- 🛢️ MySQL\n- 📊 Realtime Dashboards")
 
-    # --- Navigation buttons ---
     st.markdown("### 🧭 Quick Navigation:")
     col1, col2 = st.columns(2)
     with col1:
@@ -89,7 +91,15 @@ with left_col:
 
 with right_col:
     st_lottie(inventory_lottie, height=250, key="inventory_anim")
-    st_lottie(retail_lottie, height=250, key="retail_anim")  # New retail visual
+    st_lottie(retail_lottie, height=250, key="retail_anim")
+
+# --- Additional Visual (Image) ---
+st.markdown("### 🖼️ Retail Dashboard Preview")
+st.image(
+    "https://www.zoho.com/inventory/images/home/hero-dashboard.png",
+    caption="Retail Management – Real-time Stock & Sales Insights",
+    use_container_width=True
+)
 
 # --- Footer ---
 st.markdown("<hr>", unsafe_allow_html=True)
