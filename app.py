@@ -9,7 +9,7 @@ st.set_page_config(
     layout="wide"
 )
 
-# Load Lottie animations
+# Load Lottie animation
 def load_lottieurl(url):
     r = requests.get(url)
     if r.status_code != 200:
@@ -18,13 +18,10 @@ def load_lottieurl(url):
 
 retail_lottie = load_lottieurl("https://assets10.lottiefiles.com/packages/lf20_9cyyl8i4.json")
 
-# --- Custom CSS ---
+# --- Custom Styling ---
 st.markdown("""
     <style>
-        /* Hide default Streamlit sidebar */
-        [data-testid="stSidebar"] {
-            display: none;
-        }
+        [data-testid="stSidebar"] {display: none;}
         .stApp {
             background: linear-gradient(to right, #141e30, #243b55);
             color: white;
@@ -39,17 +36,19 @@ st.markdown("""
             padding: 12px;
             border-radius: 10px;
             margin-bottom: 30px;
+            gap: 1.5rem;
         }
-        .nav-link {
-            margin: 0 20px;
+        .nav-btn {
+            font-size: 18px;
             padding: 10px 20px;
-            color: white;
-            text-decoration: none;
             background-color: #374151;
+            border: none;
             border-radius: 8px;
+            color: white;
         }
-        .nav-link:hover {
+        .nav-btn:hover {
             background-color: #3b82f6;
+            cursor: pointer;
         }
         img {
             border-radius: 12px;
@@ -57,23 +56,32 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# --- Top Navigation Icons ---
-st.markdown("""
-    <div class="top-nav">
-        <a class="nav-link" href="#" onclick="window.location.href='/app'">🏠 Home</a>
-        <a class="nav-link" href="#" onclick="window.location.href='/upload_data'">📤 Upload</a>
-        <a class="nav-link" href="#" onclick="window.location.href='/inventory'">📦 Inventory</a>
-        <a class="nav-link" href="#" onclick="window.location.href='/purchases'">🛒 Purchases</a>
-        <a class="nav-link" href="#" onclick="window.location.href='/sales'">📈 Sales</a>
-    </div>
-""", unsafe_allow_html=True)
+# --- Navigation Buttons (Actual Streamlit Buttons calling switch_page) ---
+st.markdown("<div class='top-nav'>", unsafe_allow_html=True)
+col1, col2, col3, col4, col5 = st.columns(5)
+with col1:
+    if st.button("🏠 Home"):
+        st.switch_page("app.py")
+with col2:
+    if st.button("📤 Upload"):
+        st.switch_page("pages/0_upload_data.py")
+with col3:
+    if st.button("📦 Inventory"):
+        st.switch_page("pages/2_inventory.py")
+with col4:
+    if st.button("🛒 Purchases"):
+        st.switch_page("pages/3_purchases.py")
+with col5:
+    if st.button("📈 Sales"):
+        st.switch_page("pages/4_sales.py")
+st.markdown("</div>", unsafe_allow_html=True)
 
-# --- Header ---
+# --- Title & Description ---
 st.markdown("<h1 style='text-align:center;'>📦 All in One Retail Management</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align:center; font-size:18px;'>Empowering retailers with real-time insights.</p>", unsafe_allow_html=True)
 st.markdown("<hr>", unsafe_allow_html=True)
 
-# --- Layout ---
+# --- Main Section Layout ---
 left_col, right_col = st.columns([1.2, 1])
 with left_col:
     st.subheader("🔧 Features:")
@@ -82,24 +90,34 @@ with left_col:
     - 📈 **Sales**: View product performance, trends, and orders.
     - 📥 **Purchases**: Manage vendor performance and payment schedules.
     """)
-    
     st.subheader("🚀 Get Started:")
     st.markdown("""
     1. Go to the **Upload or Add Data** page.
     2. Use the **top navigation bar** to switch between views.
     3. Monitor trends, alerts, and inventory health — all in one place!
     """)
-    
     st.subheader("⚙️ Built With:")
-    st.markdown("-  Python + Streamlit\n- 🛢️ MySQL\n- 📊 Realtime Dashboards")
+    st.markdown("- Python + Streamlit\n- 🛢️ MySQL\n- 📊 Real-time Dashboards")
 
 with right_col:
     st.image(
         "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Inventory_management_dashboard.jpg/800px-Inventory_management_dashboard.jpg",
-        caption="Retail Inventory Dashboard",
+        caption="📊 Inventory Management Dashboard",
         use_container_width=True
     )
-    st_lottie(retail_lottie, height=250, key="retail_anim")
+
+# --- Retail Animation ---
+st_lottie(retail_lottie, height=250, key="retail_anim")
+
+# --- Additional Visuals ---
+st.markdown("### 📸 Retail Management in Action")
+img_col1, img_col2 = st.columns(2)
+with img_col1:
+    st.image("https://cdn.pixabay.com/photo/2016/10/27/22/52/barcode-1777816_1280.jpg",
+             caption="Barcode Scanning & Stocking", use_container_width=True)
+with img_col2:
+    st.image("https://cdn.pixabay.com/photo/2016/03/27/07/08/warehouse-1287184_1280.jpg",
+             caption="Retail Shelf Management", use_container_width=True)
 
 # --- Footer ---
 st.markdown("<hr>", unsafe_allow_html=True)
