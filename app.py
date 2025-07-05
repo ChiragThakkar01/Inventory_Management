@@ -4,7 +4,7 @@ import requests
 
 # Set page configuration
 st.set_page_config(
-    page_title="Retail Inventory Management",
+    page_title="All in One Retail Management",
     page_icon="📦",
     layout="wide"
 )
