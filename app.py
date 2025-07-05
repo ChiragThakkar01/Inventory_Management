@@ -2,14 +2,14 @@ import streamlit as st
 from streamlit_lottie import st_lottie
 import requests
 
-# Set page configuration
+# Page configuration
 st.set_page_config(
     page_title="All in One Retail Management",
     page_icon="📦",
     layout="wide"
 )
 
-# --- Load Lottie Animation ---
+# Load Lottie animations
 def load_lottieurl(url):
     r = requests.get(url)
     if r.status_code != 200:
@@ -17,14 +17,56 @@ def load_lottieurl(url):
     return r.json()
 
 inventory_lottie = load_lottieurl("https://assets10.lottiefiles.com/packages/lf20_jcikwtux.json")
-dashboard_lottie = load_lottieurl("https://assets7.lottiefiles.com/packages/lf20_kkflmtur.json")
+retail_lottie = load_lottieurl("https://assets10.lottiefiles.com/packages/lf20_9cyyl8i4.json")  # Updated visual
+
+# --- Custom Background ---
+st.markdown("""
+    <style>
+        .stApp {
+            background: linear-gradient(to right, #141e30, #243b55);
+            color: white;
+        }
+        h1, h2, h3, .stMarkdown p {
+            color: #f0f0f0;
+        }
+        .nav-bar {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 20px;
+        }
+        .nav-item {
+            font-size: 18px;
+            padding: 8px 20px;
+            background-color: #1f2937;
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+        }
+        .nav-item:hover {
+            background-color: #3b82f6;
+            cursor: pointer;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+# --- Top Navigation Bar ---
+st.markdown("""
+<div class="nav-bar">
+    <a class="nav-item" href="#">🏠 Home</a>
+    <a class="nav-item" href="#">📤 Upload</a>
+    <a class="nav-item" href="#">📦 Inventory</a>
+    <a class="nav-item" href="#">📥 Purchases</a>
+    <a class="nav-item" href="#">📈 Sales</a>
+</div>
+""", unsafe_allow_html=True)
 
 # --- Title ---
 st.markdown("<h1 style='text-align:center;'>📦 Retail Inventory Management System</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align:center; font-size:18px;'>Empowering retailers with real-time insights and control.</p>", unsafe_allow_html=True)
-st.markdown("---")
+st.markdown("<hr>", unsafe_allow_html=True)
 
-# --- Main layout: Two Columns ---
+# --- Main Layout ---
 left_col, right_col = st.columns([1.2, 1])
 
 with left_col:
@@ -56,10 +98,14 @@ with left_col:
             st.switch_page("pages/1_Home.py")
 
 with right_col:
-    st_lottie(inventory_lottie, height=300, key="inventory_anim")
-    st_lottie(dashboard_lottie, height=300, key="dashboard_anim")
+    st_lottie(inventory_lottie, height=250, key="inventory_anim")
+    st_lottie(retail_lottie, height=250, key="retail_anim")  # New retail visual
 
 # --- Footer ---
-st.markdown("---")
-st.markdown("<div style='text-align:center;'>🔒 Secure | ⚡ Fast | 🎯 Accurate</div>", unsafe_allow_html=True)
-st.markdown("<div style='text-align:center; font-size:12px;'>Built by Sakshi Saraiya & Chirag Thakkar/div>", unsafe_allow_html=True)
+st.markdown("<hr>", unsafe_allow_html=True)
+st.markdown("""
+<div style='text-align:center;'>
+    🔒 Secure | ⚡ Fast | 🎯 Accurate<br>
+    <span style='font-size:12px;'>Built by Sakshi Saraiya & Chirag Thakkar</span>
+</div>
+""", unsafe_allow_html=True)
