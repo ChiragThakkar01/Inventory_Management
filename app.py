@@ -17,8 +17,8 @@ def load_lottieurl(url):
     return r.json()
 
 inventory_lottie = load_lottieurl("https://assets10.lottiefiles.com/packages/lf20_jcikwtux.json")
-dashboard_lottie = load_lottieurl("https://assets7.lottiefiles.com/packages/lf20_kkflmtur.json")
-retail_lottie = load_lottieurl("https://assets10.lottiefiles.com/packages/lf20_9cyyl8i4.json")  # Retail store animation
+sales_lottie = load_lottieurl("https://assets4.lottiefiles.com/packages/lf20_vnikrcia.json")  # 🔄 NEW: sales & profit
+retail_lottie = load_lottieurl("https://assets10.lottiefiles.com/packages/lf20_9cyyl8i4.json")  # Retail store
 
 # --- Title ---
 st.markdown("<h1 style='text-align:center;'>🛒 Retail Inventory Management System</h1>", unsafe_allow_html=True)
@@ -62,7 +62,7 @@ with left_col:
 with right_col:
     st_lottie(retail_lottie, height=250, key="retail_anim")
     st_lottie(inventory_lottie, height=250, key="inventory_anim")
-    st_lottie(dashboard_lottie, height=250, key="dashboard_anim")
+    st_lottie(sales_lottie, height=250, key="sales_anim")  # 🔄 NEW Sales visual here
 
 # --- Footer ---
 st.markdown("---")
