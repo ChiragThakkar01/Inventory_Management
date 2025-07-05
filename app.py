@@ -4,8 +4,8 @@ import requests
 
 # Set page configuration
 st.set_page_config(
-    page_title="All in One Retail Management",
-    page_icon="📦",
+    page_title="All-in-One Retail Management",
+    page_icon="🛒",
     layout="wide"
 )
 
@@ -18,48 +18,53 @@ def load_lottieurl(url):
 
 inventory_lottie = load_lottieurl("https://assets10.lottiefiles.com/packages/lf20_jcikwtux.json")
 dashboard_lottie = load_lottieurl("https://assets7.lottiefiles.com/packages/lf20_kkflmtur.json")
+retail_lottie = load_lottieurl("https://assets10.lottiefiles.com/packages/lf20_9cyyl8i4.json")  # Retail store animation
 
 # --- Title ---
-st.markdown("<h1 style='text-align:center;'>📦 Retail Inventory Management System</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align:center; font-size:18px;'>Empowering retailers with real-time insights and control.</p>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align:center;'>🛒 Retail Inventory Management System</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align:center; font-size:18px;'>Empowering retailers with real-time control over stock, sales, and purchases.</p>", unsafe_allow_html=True)
 st.markdown("---")
 
-# --- Main layout: Two Columns ---
-left_col, right_col = st.columns([1.2, 1])
+# --- Layout: Left and Right Columns ---
+left_col, right_col = st.columns([1.3, 1])
 
 with left_col:
-    st.subheader("🔧 Features:")
+    st.subheader("🔧 Key Features:")
     st.markdown("""
-    - 📋 **Inventory**: Track stock levels, product variations, and categories.
-    - 📈 **Sales**: View product performance, trends, and orders.
-    - 📥 **Purchases**: Manage vendor performance and payment schedules.
+    - 📦 **Inventory Management**: Stay updated with stock levels, product types, and categories.
+    - 📈 **Sales Insights**: Monitor performance, revenue trends, and popular products.
+    - 📥 **Purchase Tracking**: Keep tabs on vendor orders and payment statuses.
     """)
 
-    st.subheader("🚀 Get Started:")
+    st.subheader("🚀 How to Get Started:")
     st.markdown("""
-    1. Go to the **Upload or Add Data** page.
-    2. Explore dashboards through the **sidebar**.
-    3. Monitor trends, alerts, and inventory health — all in one place!
+    1. Navigate to the **Upload or Add Data** page.
+    2. Use the **Sidebar** to switch between views.
+    3. Visualize sales, purchases, and stock data — all in one dashboard.
     """)
 
-    st.subheader("⚙️ Built With:")
-    st.markdown("- 🐍 Python + Streamlit\n- 🛢️ MySQL\n- 📊 Realtime Dashboards")
+    st.subheader("⚙️ Built Using:")
+    st.markdown("""
+    - 🐍 Python with Streamlit
+    - 🗄️ MySQL Database
+    - 📊 Real-time Interactive Dashboards
+    """)
 
-    # --- Navigation buttons ---
-    st.markdown("### 🧭 Quick Navigation:")
+    st.subheader("🧭 Quick Navigation:")
     col1, col2 = st.columns(2)
     with col1:
         if st.button("📤 Upload Data"):
             st.switch_page("pages/0_upload_data.py")
     with col2:
-        if st.button("📊 View Inventory"):
+        if st.button("📦 View Inventory"):
             st.switch_page("pages/1_Home.py")
 
 with right_col:
-    st_lottie(inventory_lottie, height=300, key="inventory_anim")
-    st_lottie(dashboard_lottie, height=300, key="dashboard_anim")
+    st_lottie(retail_lottie, height=250, key="retail_anim")
+    st_lottie(inventory_lottie, height=250, key="inventory_anim")
+    st_lottie(dashboard_lottie, height=250, key="dashboard_anim")
 
 # --- Footer ---
 st.markdown("---")
-st.markdown("<div style='text-align:center;'>🔒 Secure | ⚡ Fast | 🎯 Accurate</div>", unsafe_allow_html=True)
-st.markdown("<div style='text-align:center; font-size:12px;'>Built by Sakshi Saraiya & Chirag Thakkar/div>", unsafe_allow_html=True)
+st.markdown("<div style='text-align:center;'>🔐 Secure | ⚡ Fast | 📊 Smart Dashboards</div>", unsafe_allow_html=True)
+st.markdown("<div style='text-align:center; font-size:12px;'>© 2025 Built by Sakshi Saraiya & Chirag Thakkar</div>", unsafe_allow_html=True)
