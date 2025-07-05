@@ -50,19 +50,9 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# --- Top Navigation Bar ---
-st.markdown("""
-<div class="nav-bar">
-    <a class="nav-item" href="#">🏠 Home</a>
-    <a class="nav-item" href="#">📤 Upload</a>
-    <a class="nav-item" href="#">📦 Inventory</a>
-    <a class="nav-item" href="#">📥 Purchases</a>
-    <a class="nav-item" href="#">📈 Sales</a>
-</div>
-""", unsafe_allow_html=True)
 
 # --- Title ---
-st.markdown("<h1 style='text-align:center;'>📦 Retail Inventory Management System</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align:center;'>📦 All in One Retail Management</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align:center; font-size:18px;'>Empowering retailers with real-time insights and control.</p>", unsafe_allow_html=True)
 st.markdown("<hr>", unsafe_allow_html=True)
 
@@ -85,7 +75,7 @@ with left_col:
     """)
 
     st.subheader("⚙️ Built With:")
-    st.markdown("- 🐍 Python + Streamlit\n- 🛢️ MySQL\n- 📊 Realtime Dashboards")
+    st.markdown("-  Python + Streamlit\n- 🛢️ MySQL\n- 📊 Realtime Dashboards")
 
     # --- Navigation buttons ---
     st.markdown("### 🧭 Quick Navigation:")
