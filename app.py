@@ -44,9 +44,9 @@ with left_col:
 
     st.subheader("⚙️ Built Using:")
     st.markdown("""
-    - 🐍 Python with Streamlit
-    - 🗄️ MySQL Database
-    - 📊 Real-time Interactive Dashboards
+    - 🐍 Python with Streamlit  
+    - 🗄️ MySQL Database  
+    - 📊 Real-time Interactive Dashboards  
     """)
 
     st.subheader("🧭 Quick Navigation:")
@@ -61,9 +61,13 @@ with left_col:
 with right_col:
     st_lottie(retail_lottie, height=250, key="retail_anim")
     st_lottie(inventory_lottie, height=250, key="inventory_anim")
-    st.image("https://images.unsplash.com/photo-1612197522671-6b7f59ad3b12?fit=crop&w=800&q=80",
-             caption="Retail Dashboard – Inventory, Sales & Purchasing Overview",
-             use_column_width=True)
+
+    # 📸 Static image related to sales & inventory management
+    st.image(
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Sales_analytics_dashboard.png/800px-Sales_analytics_dashboard.png",
+        caption="Sales & Profit Dashboard – Real-time Business Insights",
+        use_column_width=True
+    )
 
 # --- Footer ---
 st.markdown("---")
