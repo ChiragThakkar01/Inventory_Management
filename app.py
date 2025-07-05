@@ -7,7 +7,7 @@ st.set_page_config(
     page_title="Retail Inventory Management",
     page_icon="🛒",
     layout="wide",
-    initial_sidebar_state="collapsed"  # Collapse sidebar since we're moving navigation to top
+    initial_sidebar_state="collapsed"
 )
 
 # --- Load Lottie Animations ---
@@ -19,21 +19,37 @@ def load_lottieurl(url):
 
 inventory_lottie = load_lottieurl("https://assets10.lottiefiles.com/packages/lf20_jcikwtux.json")
 retail_lottie = load_lottieurl("https://assets10.lottiefiles.com/packages/lf20_9cyyl8i4.json")
+sales_lottie = load_lottieurl("https://assets4.lottiefiles.com/private_files/lf30_p9pzimvd.json")
+purchase_lottie = load_lottieurl("https://assets2.lottiefiles.com/packages/lf20_tutvdkg0.json")
 
-# --- Top Navigation Bar ---
-menu_items = ["🏠 Home", "📤 Upload Data", "📦 Inventory", "📥 Purchases", "📈 Sales"]
-selected_tab = st.selectbox("Navigate", menu_items, index=0, key="top_nav")
-
+# --- Top Navigation Bar with Icons ---
 st.markdown("""
     <style>
-    .block-container {
-        padding-top: 1rem;
+    .nav-container {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-bottom: 20px;
     }
-    div[data-baseweb="select"] > div {
+    .nav-item {
         font-size: 18px;
-        padding: 5px;
+        padding: 10px 20px;
+        background-color: #262730;
+        border-radius: 8px;
+        color: white;
+        text-decoration: none;
+    }
+    .nav-item:hover {
+        background-color: #4F8BF9;
     }
     </style>
+    <div class="nav-container">
+        <a class="nav-item" href="#">🏠 Home</a>
+        <a class="nav-item" href="#">📤 Upload Data</a>
+        <a class="nav-item" href="#">📦 Inventory</a>
+        <a class="nav-item" href="#">📥 Purchases</a>
+        <a class="nav-item" href="#">📈 Sales</a>
+    </div>
 """, unsafe_allow_html=True)
 
 # --- Title Section ---
@@ -56,7 +72,7 @@ with left:
 
     st.subheader("🚀 How to Get Started:")
     st.markdown("""
-    1. Select a tab from the navigation dropdown above.
+    1. Select a tab from the navigation bar above.
     2. Upload or view data as needed.
     3. Analyze trends, optimize stock, and improve profits!
     """)
@@ -69,8 +85,10 @@ with left:
     """)
 
 with right:
-    st_lottie(retail_lottie, height=220, key="retail_anim")
-    st_lottie(inventory_lottie, height=220, key="inventory_anim")
+    st_lottie(retail_lottie, height=180, key="retail_anim")
+    st_lottie(inventory_lottie, height=180, key="inventory_anim")
+    st_lottie(sales_lottie, height=180, key="sales_anim")
+    st_lottie(purchase_lottie, height=180, key="purchase_anim")
 
 # --- Retail Visuals ---
 st.subheader("📸 Retail Management Visuals")
@@ -87,6 +105,22 @@ with img_col2:
     st.image(
         "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Sales_analytics_dashboard.png/800px-Sales_analytics_dashboard.png",
         caption="Sales & Profit Dashboard",
+        use_container_width=True
+    )
+
+img_col3, img_col4 = st.columns(2)
+
+with img_col3:
+    st.image(
+        "https://www.zoho.com/inventory/images/home/hero-dashboard.png",
+        caption="Zoho Inventory Dashboard",
+        use_container_width=True
+    )
+
+with img_col4:
+    st.image(
+        "https://d3fy6515xcp0h2.cloudfront.net/article_images/2023/10/inventory-forecasting-header-1000x563.jpg",
+        caption="Inventory Forecasting – Retail Intelligence",
         use_container_width=True
     )
 
