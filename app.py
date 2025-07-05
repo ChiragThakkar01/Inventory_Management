@@ -66,7 +66,7 @@ with right_col:
     st.image(
         "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Sales_analytics_dashboard.png/800px-Sales_analytics_dashboard.png",
         caption="Sales & Profit Dashboard – Real-time Business Insights",
-        use_column_width=True
+        use_container_width=True
     )
 
 # --- Footer ---
