@@ -4,7 +4,7 @@ import requests
 
 # Set page configuration
 st.set_page_config(
-    page_title="Retail Inventory Management",
+    page_title="All in One Retail Management",
     page_icon="📦",
     layout="wide"
 )
@@ -62,4 +62,4 @@ with right_col:
 # --- Footer ---
 st.markdown("---")
 st.markdown("<div style='text-align:center;'>🔒 Secure | ⚡ Fast | 🎯 Accurate</div>", unsafe_allow_html=True)
-st.markdown("<div style='text-align:center; font-size:12px;'>Built with ❤️ by Sakshi Saraiya & Chirag Thakkar/div>", unsafe_allow_html=True)
+st.markdown("<div style='text-align:center; font-size:12px;'>Built by Sakshi Saraiya & Chirag Thakkar/div>", unsafe_allow_html=True)
