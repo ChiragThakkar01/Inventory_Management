@@ -109,16 +109,6 @@ with right_col:
 # --- Retail Animation ---
 st_lottie(retail_lottie, height=250, key="retail_anim")
 
-# --- Additional Visuals ---
-st.markdown("### 📸 Retail Management in Action")
-img_col1, img_col2 = st.columns(2)
-with img_col1:
-    st.image("https://cdn.pixabay.com/photo/2016/10/27/22/52/barcode-1777816_1280.jpg",
-             caption="Barcode Scanning & Stocking", use_container_width=True)
-with img_col2:
-    st.image("https://cdn.pixabay.com/photo/2016/03/27/07/08/warehouse-1287184_1280.jpg",
-             caption="Retail Shelf Management", use_container_width=True)
-
 # --- Footer ---
 st.markdown("<hr>", unsafe_allow_html=True)
 st.markdown("""
