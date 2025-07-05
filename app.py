@@ -56,7 +56,7 @@ st.markdown("""
 
 # --- Title Section ---
 st.markdown("<h1 style='text-align:center;'>📦 All in One Retail Management</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align:center; font-size:18px;'>Empowering retailers with real-time insights and control.</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align:center; font-size:18px;'>Empowering retailers with real-time insights .</p>", unsafe_allow_html=True)
 st.markdown("<hr>", unsafe_allow_html=True)
 
 # --- Main Layout ---
@@ -78,7 +78,7 @@ with left_col:
     """)
 
     st.subheader("⚙️ Built With:")
-    st.markdown("- 🐍 Python + Streamlit\n- 🛢️ MySQL\n- 📊 Realtime Dashboards")
+    st.markdown("-  Python + Streamlit\n- 🛢️ MySQL\n- 📊 Realtime Dashboards")
 
     st.markdown("### 🧭 Quick Navigation:")
     col1, col2 = st.columns(2)
@@ -93,13 +93,6 @@ with right_col:
     st_lottie(inventory_lottie, height=250, key="inventory_anim")
     st_lottie(retail_lottie, height=250, key="retail_anim")
 
-# --- Additional Visual (Image) ---
-st.markdown("### 🖼️ Retail Dashboard Preview")
-st.image(
-    "https://assets-global.website-files.com/63912ef542b4cb65aa7064c2/63d54b6b14318b8eb4c30895_dashboard-retail%20(1).png",
-    caption="Retail Management – Real-time Stock & Sales Insights",
-    use_container_width=True
-)
 
 # --- Footer ---
 st.markdown("<hr>", unsafe_allow_html=True)
