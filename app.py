@@ -16,7 +16,7 @@ def load_lottieurl(url):
         return None
     return r.json()
 
-inventory_lottie = load_lottieurl("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Inventory_management_dashboard.jpg/800px-Inventory_management_dashboard.jpg")
+inventory_lottie = load_lottieurl("https://assets6.lottiefiles.com/packages/lf20_w51pcehl.json")
 retail_lottie = load_lottieurl("https://assets10.lottiefiles.com/packages/lf20_9cyyl8i4.json")  # Retail management
 
 # --- Custom Background and CSS ---
