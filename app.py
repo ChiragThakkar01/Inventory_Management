@@ -16,7 +16,7 @@ def load_lottieurl(url):
         return None
     return r.json()
 
-inventory_lottie = load_lottieurl("https://lottiefiles.com/free-animation/make-payment-wy3s8tMtZ9")
+inventory_lottie = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_7cyyf4mp.json")
 retail_lottie = load_lottieurl("https://assets10.lottiefiles.com/packages/lf20_9cyyl8i4.json")  # Retail management
 
 # --- Custom Background and CSS ---
