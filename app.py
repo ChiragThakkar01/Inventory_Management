@@ -17,7 +17,6 @@ def load_lottieurl(url):
     return r.json()
 
 inventory_lottie = load_lottieurl("https://assets10.lottiefiles.com/packages/lf20_jcikwtux.json")
-sales_lottie = load_lottieurl("https://assets4.lottiefiles.com/packages/lf20_vnikrcia.json")  # 🔄 NEW: sales & profit
 retail_lottie = load_lottieurl("https://assets10.lottiefiles.com/packages/lf20_9cyyl8i4.json")  # Retail store
 
 # --- Title ---
@@ -62,7 +61,9 @@ with left_col:
 with right_col:
     st_lottie(retail_lottie, height=250, key="retail_anim")
     st_lottie(inventory_lottie, height=250, key="inventory_anim")
-    st_lottie(sales_lottie, height=250, key="sales_anim")  # 🔄 NEW Sales visual here
+    st.image("https://images.unsplash.com/photo-1612197522671-6b7f59ad3b12?fit=crop&w=800&q=80",
+             caption="Retail Dashboard – Inventory, Sales & Purchasing Overview",
+             use_column_width=True)
 
 # --- Footer ---
 st.markdown("---")
