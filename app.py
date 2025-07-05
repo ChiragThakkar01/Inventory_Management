@@ -96,7 +96,7 @@ with right_col:
 # --- Additional Visual (Image) ---
 st.markdown("### 🖼️ Retail Dashboard Preview")
 st.image(
-    "https://www.zoho.com/inventory/images/home/hero-dashboard.png",
+    "https://assets-global.website-files.com/63912ef542b4cb65aa7064c2/63d54b6b14318b8eb4c30895_dashboard-retail%20(1).png",
     caption="Retail Management – Real-time Stock & Sales Insights",
     use_container_width=True
 )
