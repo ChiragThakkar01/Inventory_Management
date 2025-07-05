@@ -16,12 +16,15 @@ def load_lottieurl(url):
         return None
     return r.json()
 
-inventory_lottie = load_lottieurl("https://assets6.lottiefiles.com/packages/lf20_w51pcehl.json")
-retail_lottie = load_lottieurl("https://assets10.lottiefiles.com/packages/lf20_9cyyl8i4.json")  # Retail management
+retail_lottie = load_lottieurl("https://assets10.lottiefiles.com/packages/lf20_9cyyl8i4.json")
 
-# --- Custom Background and CSS ---
+# --- Custom CSS ---
 st.markdown("""
     <style>
+        /* Hide default Streamlit sidebar */
+        [data-testid="stSidebar"] {
+            display: none;
+        }
         .stApp {
             background: linear-gradient(to right, #141e30, #243b55);
             color: white;
@@ -29,23 +32,24 @@ st.markdown("""
         h1, h2, h3, .stMarkdown p {
             color: #f0f0f0;
         }
-        .nav-bar {
+        .top-nav {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-bottom: 20px;
-        }
-        .nav-item {
-            font-size: 18px;
-            padding: 8px 20px;
             background-color: #1f2937;
+            padding: 12px;
             border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .nav-link {
+            margin: 0 20px;
+            padding: 10px 20px;
             color: white;
             text-decoration: none;
+            background-color: #374151;
+            border-radius: 8px;
         }
-        .nav-item:hover {
+        .nav-link:hover {
             background-color: #3b82f6;
-            cursor: pointer;
         }
         img {
             border-radius: 12px;
@@ -53,15 +57,24 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+# --- Top Navigation Icons ---
+st.markdown("""
+    <div class="top-nav">
+        <a class="nav-link" href="#" onclick="window.location.href='/app'">🏠 Home</a>
+        <a class="nav-link" href="#" onclick="window.location.href='/upload_data'">📤 Upload</a>
+        <a class="nav-link" href="#" onclick="window.location.href='/inventory'">📦 Inventory</a>
+        <a class="nav-link" href="#" onclick="window.location.href='/purchases'">🛒 Purchases</a>
+        <a class="nav-link" href="#" onclick="window.location.href='/sales'">📈 Sales</a>
+    </div>
+""", unsafe_allow_html=True)
 
-# --- Title Section ---
+# --- Header ---
 st.markdown("<h1 style='text-align:center;'>📦 All in One Retail Management</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align:center; font-size:18px;'>Empowering retailers with real-time insights .</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align:center; font-size:18px;'>Empowering retailers with real-time insights.</p>", unsafe_allow_html=True)
 st.markdown("<hr>", unsafe_allow_html=True)
 
-# --- Main Layout ---
+# --- Layout ---
 left_col, right_col = st.columns([1.2, 1])
-
 with left_col:
     st.subheader("🔧 Features:")
     st.markdown("""
@@ -69,30 +82,24 @@ with left_col:
     - 📈 **Sales**: View product performance, trends, and orders.
     - 📥 **Purchases**: Manage vendor performance and payment schedules.
     """)
-
+    
     st.subheader("🚀 Get Started:")
     st.markdown("""
     1. Go to the **Upload or Add Data** page.
-    2. Explore dashboards through the **sidebar**.
+    2. Use the **top navigation bar** to switch between views.
     3. Monitor trends, alerts, and inventory health — all in one place!
     """)
-
+    
     st.subheader("⚙️ Built With:")
     st.markdown("-  Python + Streamlit\n- 🛢️ MySQL\n- 📊 Realtime Dashboards")
 
-    st.markdown("### 🧭 Quick Navigation:")
-    col1, col2 = st.columns(2)
-    with col1:
-        if st.button("📤 Upload Data"):
-            st.switch_page("pages/0_upload_data.py")
-    with col2:
-        if st.button("📊 View Inventory"):
-            st.switch_page("pages/1_Home.py")
-
 with right_col:
-    st_lottie(inventory_lottie, height=250, key="inventory_anim")
+    st.image(
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Inventory_management_dashboard.jpg/800px-Inventory_management_dashboard.jpg",
+        caption="Retail Inventory Dashboard",
+        use_container_width=True
+    )
     st_lottie(retail_lottie, height=250, key="retail_anim")
-
 
 # --- Footer ---
 st.markdown("<hr>", unsafe_allow_html=True)
