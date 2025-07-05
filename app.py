@@ -64,26 +64,6 @@ with right_col:
     st_lottie(retail_lottie, height=250, key="retail_anim")
     st_lottie(inventory_lottie, height=250, key="inventory_anim")
 
-# --- Visuals Section ---
-st.markdown("---")
-st.subheader("📸 Retail Management Visuals")
-
-img_col1, img_col2 = st.columns(2)
-
-with img_col1:
-    st.image(
-        "mnt/data/aa119cfb-a14a-4a1e-9d22-9cae5a089bc3.png",
-        caption="Inventory Management – Real-time Stock Overview",
-        use_container_width=True
-    )
-
-with img_col2:
-    st.image(
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Sales_analytics_dashboard.png/800px-Sales_analytics_dashboard.png",
-        caption="Sales & Profit Dashboard – Business Insights",
-        use_container_width=True
-    )
-
 # --- Footer ---
 st.markdown("---")
 st.markdown("<div style='text-align:center;'>🔐 Secure | ⚡ Fast | 📊 Smart Dashboards</div>", unsafe_allow_html=True)
